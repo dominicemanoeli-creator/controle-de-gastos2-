@@ -1,4 +1,3 @@
-// src/main/java/br/com/controledegastos/model/Lancamento.java
 package br.com.controledegastos.model;
 
 import jakarta.persistence.*;
@@ -16,18 +15,48 @@ public class Lancamento {
     private BigDecimal valor;
     private LocalDate data = LocalDate.now();
 
+    @Column(columnDefinition = "varchar(255)")
     @Enumerated(EnumType.STRING)
     private TipoLancamento tipo;
 
     // Getters e Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getDescricao() { return descricao; }
-    public void setDescricao(String descricao) { this.descricao = descricao; }
-    public BigDecimal getValor() { return valor; }
-    public void setValor(BigDecimal valor) { this.valor = valor; }
-    public LocalDate getData() { return data; }
-    public void setData(LocalDate data) { this.data = data; }
-    public TipoLancamento getTipo() { return tipo; }
-    public void setTipo(TipoLancamento tipo) { this.tipo = tipo; }
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
+    }
+
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
+    public TipoLancamento getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoLancamento tipo) {
+        this.tipo = tipo;
+    }
 }

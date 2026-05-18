@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:hx-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,7 +57,7 @@
                         <td th:text="${lancamento.tipo.name()}"></td>
                         <td>
                             <button class="delete-btn"
-                                    hx-delete="@{/lancamentos/{id}(id=${lancamento.id})}"
+                                    th:attr="hx-delete=${'/lancamentos/' + lancamento.id}"
                                     hx-target="#lista-lancamentos"
                                     hx-swap="outerHTML"
                                     hx-confirm="Tem certeza que deseja excluir?">
